@@ -1,14 +1,24 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router";
-import NavMenu from "./NavMenu";
+import NavMenu from "./NavMenu.tsx";
+import { motion } from "motion/react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="container py-16 flex justify-between items-center relative z-1001">
-      <Link to="/" className="text-white text-md font-secondary">
+    <motion.nav
+      className="container py-16 flex justify-between items-center relative z-1001"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 1 }}
+    >
+      <Link
+        to="/"
+        className="text-white text-[30px] font-primary"
+        onClick={() => setIsOpen(false)}
+      >
         ANTHONY COLLETTE
       </Link>
       <div>
@@ -20,7 +30,7 @@ const Nav = () => {
         </button>
         {createPortal(<NavMenu open={isOpen} />, document.body)}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

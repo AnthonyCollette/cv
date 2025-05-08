@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRef } from "react";
-import AnimatedText from "./AnimatedText";
+import AnimatedText from "./AnimatedText.tsx";
 
 const NavMenu = ({ open }: { open: boolean }) => {
   const testRef = useRef<HTMLUListElement>(null);
@@ -87,7 +87,7 @@ const NavMenu = ({ open }: { open: boolean }) => {
               <div>
                 <div className="overflow-hidden">
                   <p className="font-secondary text-white text-md">
-                    <AnimatedText text="email" delay={1.8} />
+                    <AnimatedText text="email" delay={1.6} />
                   </p>
                 </div>
                 <div className="overflow-hidden">
@@ -97,7 +97,7 @@ const NavMenu = ({ open }: { open: boolean }) => {
                   >
                     <AnimatedText
                       text="contactpro@anthonycollette.fr"
-                      delay={2.2}
+                      delay={1.6}
                     />
                   </a>
                 </div>

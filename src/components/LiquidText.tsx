@@ -96,7 +96,7 @@ const LiquidDistortionMesh: React.FC<LiquidDistortionMeshProps> = ({
     materialRef.current.uniforms.effectStrength.value = THREE.MathUtils.lerp(
       materialRef.current.uniforms.effectStrength.value,
       targetStrength,
-      0.1 // Douceur de la transition
+      0.05 // Douceur de la transition
     );
   });
 
@@ -116,14 +116,14 @@ export default function LiquidText() {
   return (
     <Text
       ref={textMeshRef}
-      fontSize={2.4}
+      fontSize={2.1}
       color="white"
       position={[0, 0, 0]}
       anchorX="center"
       anchorY="middle"
       font="/fonts/Bebas_Neue/BebasNeue-Regular.ttf"
     >
-      ANTHONY COLLETTE
+      DÉVELOPPEUR FRONT-END
       <LiquidDistortionMesh initialColor="white" textMeshRef={textMeshRef} />
     </Text>
   );
