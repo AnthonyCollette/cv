@@ -13,8 +13,7 @@
 
 @utility container {
   margin: 0 auto;
-  width: 90%;
-  max-width: 1920px;
+  max-width: 90%;
 }
 
 @theme {

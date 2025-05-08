@@ -1,11 +1,11 @@
 import { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 
-export default function AnimatedLink({
-  link,
+export default function AnimatedText({
+  text,
   delay,
 }: {
-  link: string;
+  text: string;
   delay: number;
 }) {
   const wrapperRef = useRef<HTMLSpanElement>(null); // Ref pour le span wrapper
@@ -40,7 +40,7 @@ export default function AnimatedLink({
       ref={wrapperRef}
       style={{ display: "inline-block", verticalAlign: "top" }}
     >
-      {link.split("").map((char, i) => (
+      {text.split("").map((char, i) => (
         <span key={i} className="letter-span inline-block">
           {char === " " ? "\u00A0" : char}
         </span>
